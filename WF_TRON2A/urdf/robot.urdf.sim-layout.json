@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "sourceFile": "robot.urdf",
+  "layout": {
+    "base_Link": {
+      "x": 60.0,
+      "y": 260.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "base_imu": {
+      "x": 600.0,
+      "y": 80.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "proximal_pitch_L_Link": {
+      "x": 600.0,
+      "y": 200.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "proximal_roll_L_Link": {
+      "x": 1140.0,
+      "y": 140.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "proximal_yaw_L_Link": {
+      "x": 1680.0,
+      "y": 200.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "knee_L_Link": {
+      "x": 2220.0,
+      "y": 200.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "wheel_L_Link": {
+      "x": 2760.0,
+      "y": 200.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "proximal_pitch_R_Link": {
+      "x": 600.0,
+      "y": 320.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "proximal_roll_R_Link": {
+      "x": 1140.0,
+      "y": 260.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "proximal_yaw_R_Link": {
+      "x": 1680.0,
+      "y": 320.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "knee_R_Link": {
+      "x": 2220.0,
+      "y": 320.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "wheel_R_Link": {
+      "x": 2760.0,
+      "y": 320.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "d435_Link": {
+      "x": 600.0,
+      "y": 440.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "d435_optical_frame": {
+      "x": 1140.0,
+      "y": 380.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "base_imu_Joint": {
+      "x": 340.0,
+      "y": 60.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "proximal_pitch_L_Joint": {
+      "x": 340.0,
+      "y": 180.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "proximal_roll_L_Joint": {
+      "x": 880.0,
+      "y": 120.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "proximal_yaw_L_Joint": {
+      "x": 1420.0,
+      "y": 180.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "knee_L_Joint": {
+      "x": 1960.0,
+      "y": 180.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "wheel_L_Joint": {
+      "x": 2500.0,
+      "y": 180.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "proximal_pitch_R_Joint": {
+      "x": 340.0,
+      "y": 320.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "proximal_roll_R_Joint": {
+      "x": 880.0,
+      "y": 260.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "proximal_yaw_R_Joint": {
+      "x": 1420.0,
+      "y": 320.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "knee_R_Joint": {
+      "x": 1960.0,
+      "y": 320.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "wheel_R_Joint": {
+      "x": 2500.0,
+      "y": 320.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "d435_Joint": {
+      "x": 340.0,
+      "y": 460.0,
+      "rotation": 0,
+      "flipH": false
+    },
+    "d435_optical_Joint": {
+      "x": 880.0,
+      "y": 400.0,
+      "rotation": 0,
+      "flipH": false
+    }
+  },
+  "annotations": [],
+  "analysisPoints": [],
+  "loggedSignals": []
+}
