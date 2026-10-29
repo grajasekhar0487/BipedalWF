@@ -14,7 +14,7 @@ class PPORunnerCfg(RslRlOnPolicyRunnerCfg):
     """On-policy PPO configuration for the 10-DoF WF-TRON2A."""
 
     num_steps_per_env = 24
-    max_iterations = 5000
+    max_iterations = 2000
     save_interval = 100
     experiment_name = "wf_tron2a_balance_walk"
     obs_groups = {"actor": ["policy"], "critic": ["policy"]}
@@ -22,7 +22,7 @@ class PPORunnerCfg(RslRlOnPolicyRunnerCfg):
         hidden_dims=[256, 256, 128],
         activation="elu",
         obs_normalization=True,
-        distribution_cfg=RslRlMLPModelCfg.GaussianDistributionCfg(init_std=0.6),
+        distribution_cfg=RslRlMLPModelCfg.GaussianDistributionCfg(init_std=0.3),
     )
     critic = RslRlMLPModelCfg(
         hidden_dims=[256, 256, 128],

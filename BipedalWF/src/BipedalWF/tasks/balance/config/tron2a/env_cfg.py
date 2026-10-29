@@ -6,6 +6,7 @@
 """WF-TRON2A balancing and velocity-tracking environment."""
 
 import isaaclab.sim as sim_utils
+from isaaclab.actuators import ImplicitActuatorCfg
 from isaaclab.assets import ArticulationCfg, AssetBaseCfg
 from isaaclab.envs import ManagerBasedRLEnvCfg
 from isaaclab.envs import mdp as core_mdp
@@ -83,10 +84,33 @@ class Tron2ASceneCfg(InteractiveSceneCfg):
             activate_contact_sensors=True,
         ),
         init_state=ArticulationCfg.InitialStateCfg(
-            pos=(0.0, 0.0, 1.0),
-            joint_pos={"knee_[LR]_Joint": -0.55},
+            # With the URDF's zero joint pose, the wheel radius places contact at z ~= 0.75 m.
+            pos=(0.0, 0.0, 0.75),
             joint_vel={".*": 0.0},
         ),
+        actuators={
+            "leg_joints": ImplicitActuatorCfg(
+                joint_names_expr=["proximal_pitch_[LR]_Joint", "proximal_roll_[LR]_Joint", "knee_[LR]_Joint"],
+                stiffness=0.0,
+                damping=0.0,
+                joint_effort_limit=150.0,
+                joint_velocity_limit=18.3,
+            ),
+            "yaw_joints": ImplicitActuatorCfg(
+                joint_names_expr=["proximal_yaw_[LR]_Joint"],
+                stiffness=0.0,
+                damping=0.0,
+                joint_effort_limit=60.0,
+                joint_velocity_limit=22.52,
+            ),
+            "wheels": ImplicitActuatorCfg(
+                joint_names_expr=["wheel_[LR]_Joint"],
+                stiffness=0.0,
+                damping=0.0,
+                joint_effort_limit=22.0,
+                joint_velocity_limit=41.89,
+            ),
+        },
         soft_joint_pos_limit_factor=0.9,
     )
     dome_light = AssetBaseCfg(
@@ -113,13 +137,19 @@ class CommandsCfg:
 
 @configclass
 class ActionsCfg:
-    """Joint torque commands, scaled to the URDF actuator ratings."""
+    """Joint torque commands with conservative scales below the URDF actuator limits."""
 
     joint_effort = core_mdp.JointEffortActionCfg(
         asset_name="robot",
         joint_names=JOINT_NAMES,
         preserve_order=True,
-        scale={"proximal_yaw_.*": 60.0, "wheel_.*": 22.0, ".*": 150.0},
+        scale={
+            "proximal_pitch_[LR]_Joint": 40.0,
+            "proximal_roll_[LR]_Joint": 25.0,
+            "proximal_yaw_[LR]_Joint": 15.0,
+            "knee_[LR]_Joint": 40.0,
+            "wheel_[LR]_Joint": 10.0,
+        },
     )
 
 
@@ -212,7 +242,7 @@ class TerminationsCfg:
 class Tron2AEnvCfg(ManagerBasedRLEnvCfg):
     """WF-TRON2A balancing and velocity-command locomotion environment."""
 
-    scene: Tron2ASceneCfg = Tron2ASceneCfg(num_envs=1024, env_spacing=3.0)
+    scene: Tron2ASceneCfg = Tron2ASceneCfg(num_envs=512, env_spacing=3.0)
     observations: ObservationsCfg = ObservationsCfg()
     actions: ActionsCfg = ActionsCfg()
     commands: CommandsCfg = CommandsCfg()
