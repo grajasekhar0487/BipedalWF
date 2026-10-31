@@ -27,7 +27,6 @@ BipedalWF = "BipedalWF.tasks"
 [project.optional-dependencies]
 all = ["isaaclab-dev[all]"]
 dev = ["isaaclab-dev[dev]"]
-importers = ["isaaclab-dev[importers]"]
 isaacsim = ["isaaclab-dev[isaacsim]"]
 leapp = ["isaaclab-dev[leapp]"]
 mimic = ["isaaclab-dev[mimic]"]
@@ -64,8 +63,8 @@ override-dependencies = [
     "numpy>=2",
     "mujoco~=3.15.0",
     "mujoco-warp~=3.15.0",
-    "newton[sim] @ git+https://github.com/newton-physics/newton.git@71eeba16a717d4dcf0b9dd7056a7b6f863054dc3",
-    "newton-usd-schemas>=0.5.0",
+    "newton[sim] @ git+https://github.com/newton-physics/newton.git@42f7def118c2c4299ce493457bafd4e8a22a696e",
+    "newton-usd-schemas==0.5.0",
     "usd-exchange==3.0.1",
     "usd-optimize~=1.3.1",
     "torch==2.11.0",
@@ -76,21 +75,21 @@ override-dependencies = [
 ]
 
 [tool.uv.sources]
-"isaaclab" = { path = "../../IsaacLab/source/isaaclab", editable = true }
-"isaaclab-assets" = { path = "../../IsaacLab/source/isaaclab_assets", editable = true }
-"isaaclab-contrib" = { path = "../../IsaacLab/source/isaaclab_contrib", editable = true }
-"isaaclab-dev" = { path = "../../IsaacLab", editable = true }
-"isaaclab-experimental" = { path = "../../IsaacLab/source/isaaclab_experimental", editable = true }
-"isaaclab-mimic" = { path = "../../IsaacLab/source/isaaclab_mimic", editable = true }
-"isaaclab-newton" = { path = "../../IsaacLab/source/isaaclab_newton", editable = true }
-"isaaclab-ov" = { path = "../../IsaacLab/source/isaaclab_ov", editable = true }
-"isaaclab-physx" = { path = "../../IsaacLab/source/isaaclab_physx", editable = true }
-"isaaclab-ppisp" = { path = "../../IsaacLab/source/isaaclab_ppisp", editable = true }
-"isaaclab-rl" = { path = "../../IsaacLab/source/isaaclab_rl", editable = true }
-"isaaclab-tasks" = { path = "../../IsaacLab/source/isaaclab_tasks", editable = true }
-"isaaclab-tasks-experimental" = { path = "../../IsaacLab/source/isaaclab_tasks_experimental", editable = true }
-"isaaclab-teleop" = { path = "../../IsaacLab/source/isaaclab_teleop", editable = true }
-"isaaclab-visualizers" = { path = "../../IsaacLab/source/isaaclab_visualizers", editable = true }
+"isaaclab" = { path = "../IsaacLab/source/isaaclab", editable = true }
+"isaaclab-assets" = { path = "../IsaacLab/source/isaaclab_assets", editable = true }
+"isaaclab-contrib" = { path = "../IsaacLab/source/isaaclab_contrib", editable = true }
+"isaaclab-dev" = { path = "../IsaacLab", editable = true }
+"isaaclab-experimental" = { path = "../IsaacLab/source/isaaclab_experimental", editable = true }
+"isaaclab-mimic" = { path = "../IsaacLab/source/isaaclab_mimic", editable = true }
+"isaaclab-newton" = { path = "../IsaacLab/source/isaaclab_newton", editable = true }
+"isaaclab-ov" = { path = "../IsaacLab/source/isaaclab_ov", editable = true }
+"isaaclab-physx" = { path = "../IsaacLab/source/isaaclab_physx", editable = true }
+"isaaclab-ppisp" = { path = "../IsaacLab/source/isaaclab_ppisp", editable = true }
+"isaaclab-rl" = { path = "../IsaacLab/source/isaaclab_rl", editable = true }
+"isaaclab-tasks" = { path = "../IsaacLab/source/isaaclab_tasks", editable = true }
+"isaaclab-tasks-experimental" = { path = "../IsaacLab/source/isaaclab_tasks_experimental", editable = true }
+"isaaclab-teleop" = { path = "../IsaacLab/source/isaaclab_teleop", editable = true }
+"isaaclab-visualizers" = { path = "../IsaacLab/source/isaaclab_visualizers", editable = true }
 "omniverseclient" = { index = "pypi-public" }
 "ovphysx" = { index = "pypi-public" }
 "ovrtx" = { index = "pypi-public" }
